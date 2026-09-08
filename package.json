@@ -1,0 +1,39 @@
+{
+  "name": "flyff-web-mmo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:login": "pnpm --filter @flyff/login-server dev",
+    "dev:game": "pnpm --filter @flyff/game-server dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "client:install": "node packages/client/scripts/install-emsdk.mjs",
+    "setup:data": "node scripts/ensure-data-loaders.mjs",
+    "client:gen-stubs": "python3 packages/client/gen_stubs.py",
+    "client:configure": "node packages/client/scripts/cmake-configure.mjs",
+    "client:build": "node packages/client/scripts/cmake-build.mjs",
+    "client:run": "node packages/client/scripts/serve.mjs",
+    "client:clean": "node -e \"require('fs').rmSync('packages/client/build_neuz',{recursive:true,force:true})\"",
+    "client:all": "pnpm client:gen-stubs && pnpm client:configure && pnpm client:build",
+    "lnd:convert": "npx tsx tools/src/lnd-to-terrain/index.ts tools/data/flaris packages/client/assets/world",
+    "claude": "claude --dangerously-skip-permissions"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "esbuild"
+    ],
+    "ignoredBuiltDependencies": [
+      "sharp"
+    ]
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}

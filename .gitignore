@@ -1,0 +1,79 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+
+# Logs
+*.log
+
+# Emscripten SDK (~1.5GB)
+emsdk/
+
+# Emscripten build output
+packages/client/build_neuz/
+flyff_web.data
+flyff_web_data.js
+
+# Local data (SQLite dev DBs)
+*.db
+*.db-journal
+/data/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Coverage
+coverage/
+.vite/
+
+# Archives
+*.tgz
+
+# C/C++ build artifacts
+*.ipch
+*.lib
+*.obj
+*.pdb
+*.exe
+*.dll
+*.idb
+*.ilk
+*.tlog
+*.exp
+*.cache
+*.aps
+*.plg
+*.bsp
+*.i
+*.suo
+*.opensdf
+*.sdf
+*.user
+*.ncb
+*.opt
+*.wsuo
+*.vsidx
+*.sqlite
+*.bin
+
+# Visual Studio intermediate directories
+.vs/
+**/Debug/
+**/Release/
+**/x64/
+**/x86/
+
+.playwright-mcp
