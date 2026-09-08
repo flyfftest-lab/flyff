@@ -1,0 +1,1 @@
+{"name":"@flyff/shared","version":"0.1.0","private":true,"type":"module","scripts":{"build":"tsc","test":"node --test --import tsx src/protocol/binary.test.ts"},"devDependencies":{"@types/node":"^26.0.1","tsx":"^4.7.0","typescript":"^5.4.0"}}
